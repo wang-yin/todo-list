@@ -1,0 +1,11 @@
+.container {
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+}
+
+.text-container {
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

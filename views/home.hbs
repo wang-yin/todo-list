@@ -1,1 +1,23 @@
-<h1>HELLO!</h1>
+{{#each todo}}
+<div class="border mb-3 d-flex justify-content-around rounded-3 todolist">
+  <div class="d-flex align-items-center data">
+    {{#unless isCompleted}}
+    <button class="complete"><i class="fa-regular fa-circle fa-2x mt-1 icon"></i></button>
+    {{/unless}}
+    {{#if isCompleted}}
+    <button class="complete"><i class="fa-solid fa-check fa-2x mt-1 icon"></i></button>
+    {{/if}}
+  </div>
+  <div class="text-container">
+    <span class="fs-3">{{ this.content }}</span>
+  </div>
+  <span class="d-flex align-items-center datapanel">
+    <button class="edit" data-id="{{ this._id }}"><i class="fa-solid fa-pen-to-square fa-2x"></i></button>
+    <form action="" method="">
+      <div class="ms-5">
+        <button type="submit"><i class="fa-solid fa-trash-can trash  fa-2x"></i></button>
+      </div>
+    </form>
+  </span>
+</div>
+{{/each}}

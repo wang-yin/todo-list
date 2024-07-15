@@ -3,13 +3,37 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Example App</title>
+  <title>TODO App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/main.css" rel="stylesheet">
 </head>
 
 <body>
+  <div class="container d-flex flex-column justify-content-center align-items-center">
+    <div class="text-center">
+      <span class="fw-bold  fs-1">TO-DO APP</span>
+    </div>
+  </div>
+  <form class="d-flex justify-content-center" method="post" action="/api/create">
+    <input class="form-control me-2 w-25" id="content" name="content" value="{{option.content}}" type="text"
+      placeholder="Add Todo..." aria-label="Add">
+    <button class="btn btn-outline-success" type="submit">Add</button>
+  </form>
+  <div class="container d-flex  flex-column mt-5 p-2" id="data-panel">
 
-  {{{body}}}
+  {{{ body }}}
+    
+  </div>
+
+  <script src="/javascripts/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+  <script src="/javascripts/eventListener.js"></script>
+  <script src="/javascripts/function.js"></script>
+
+
 
 </body>
 
-</html>
+
+
