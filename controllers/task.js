@@ -14,6 +14,11 @@ const taskController = {
       res.redirect('/')
     }
   },
+  del: (req, res) => {
+    task.findOneAndDelete({_id: req.params.id})
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+  }
 }
 
 module.exports = taskController

@@ -3,6 +3,7 @@ const { engine } = require('express-handlebars')
 const app = express()
 const home = require('./routes/home')
 const todo = require('./routes/todo')
+const methodOverride = require('method-override')
 require('./config/mongoose')
 
 
@@ -18,6 +19,7 @@ app.use(express.static('public'))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(methodOverride('_method'))
 
 
 app.use('/', home)
