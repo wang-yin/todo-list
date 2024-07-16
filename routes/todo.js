@@ -3,7 +3,10 @@ const todo = require('../controllers/task')
 
 router.post('/create', todo.create )
 
-router.delete('/:id', todo.del)
+router
+.route('/:id')
+.delete(todo.del)
+.put(todo.completed)
 
 
 

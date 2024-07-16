@@ -18,7 +18,13 @@ const taskController = {
     task.findOneAndDelete({_id: req.params.id})
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
-  }
+  },
+  completed: (req, res) => {
+    task.findOneAndUpdate({_id: req.params.id}, {isCompleted: true})
+    .then(result => res.json(result))
+      .catch(err => res.json(err))
+  },
+
 }
 
 module.exports = taskController

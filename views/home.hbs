@@ -2,10 +2,10 @@
 <div class="border mb-3 d-flex justify-content-around rounded-3 todolist">
   <div class="d-flex align-items-center data">
     {{#unless isCompleted}}
-    <button class="complete"><i class="fa-regular fa-circle fa-2x mt-1 icon"></i></button>
+    <button class="complete" data-id="{{ this._id }}"><i class="fa-regular fa-circle fa-2x mt-1 icon"></i></button>
     {{/unless}}
     {{#if isCompleted}}
-    <button class="complete"><i class="fa-solid fa-check fa-2x mt-1 icon"></i></button>
+    <button class="complete" data-id="{{ this._id }}"><i class="fa-solid fa-check fa-2x mt-1 icon"></i></button>
     {{/if}}
   </div>
   <div class="text-container">
