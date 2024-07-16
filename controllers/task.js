@@ -24,6 +24,23 @@ const taskController = {
     .then(result => res.json(result))
       .catch(err => res.json(err))
   },
+  findOne: (req, res) => {
+    task.findOne({_id: req.params.id})
+    .then(result => res.render('edit', result))
+    .catch(err => res.json(err))
+  },
+  edit: (req, res) => {
+    const id = req.params.id
+    const { content } = req.body
+    return task.findById(id)
+    .then(todo => {
+      todo.content = content
+      todo.isCompleted = false
+      return todo.save()
+    })
+    .then(() => res.redirect('/'))
+    .catch(err => res.json(err))
+  }
 
 }
 

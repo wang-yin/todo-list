@@ -1,0 +1,20 @@
+<div class="border mb-3 d-flex justify-content-around rounded-3 todolist">
+  <div class="d-flex align-items-center data">
+    {{#unless isCompleted}}
+    <button class="complete"><i class="fa-regular fa-circle fa-2x mt-1 icon"></i></button>
+    {{/unless}}
+    {{#if isCompleted}}
+    <button class="complete"><i class="fa-solid fa-check fa-2x mt-1 icon"></i></button>
+    {{/if}}
+  </div>
+  <div class="text-container">
+    <span class="fs-3">{{ content }}</span>
+  </div>
+  <span class="d-flex align-items-center datapanel">
+    <form action="/api/update/{{ _id }}?_method=PUT" method="POST">
+      <input type="text" name="content" autofocus></input>
+      <button class="btn " type="submit">Edit</button>
+    </form>
+    <a href="/"><button class="btn  ms-1" type="button">Back</button></a>
+  </span>
+</div>
